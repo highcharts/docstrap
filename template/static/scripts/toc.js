@@ -1,3 +1,4 @@
+/* eslint-disable */
 (function($) {
   var navbarHeight;
   var initialised = false;
@@ -156,7 +157,11 @@
         var anchor = $('<span/>').attr('id', opts.anchorName(i, heading, opts.prefix) + ANCHOR_PREFIX).insertBefore($h);
 
         var span = $('<span/>')
-          .text(opts.headerText(i, heading, $h));
+          .html(
+            opts
+              .headerText(i, heading, $h)
+              .replace(/(\([^\)]*\))/g, '<span class="params">$1</span>')
+          );
 
         //build TOC item
         var a = $('<a class="list-group-item"/>')
