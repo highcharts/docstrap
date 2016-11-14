@@ -82,6 +82,11 @@ var navigationMaster = {
     link: helper.getUniqueFilename("mixins.list"),
     members: []
   },
+  option: {
+    title: "Options",
+    link: helper.getUniqueFilename("options.list"),
+    members: []
+  },
   event: {
     title: "Events",
     link: helper.getUniqueFilename("events.list"),
@@ -468,6 +473,20 @@ function buildNav(members) {
     }
   }
 
+  if (members.options.length) {
+
+    members.options.forEach(function(o) {
+      if (!hasOwnProp.call(seen, o.longname)) {
+
+        nav.option.members.push(linkto(o.longname, o.longname.replace("module:", "")));
+      }
+      seen[o.longname] = true;
+    });
+
+  }
+
+  
+
   var topLevelNav = [];
   _.each(nav, function(entry, name) {
     if (entry.members.length > 0 && name !== "index") {
@@ -681,6 +700,7 @@ exports.publish = function(taffyData, opts, tutorials) {
   });
 
   var members = helper.getMembers(data);
+  members.options = data({kind: 'option'}).get();
   members.tutorials = tutorials.children;
 
   // add template helpers
