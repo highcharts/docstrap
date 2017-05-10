@@ -33,6 +33,14 @@
           setTimeout(doScroll, 0);
         }
       }
+
+      // Highsoft specific, highlight the current member
+      $('div.hc-member.active').removeClass('active');
+      var $memberDiv = $el;
+      while ($memberDiv.length && !$memberDiv.hasClass('hc-member')) {
+        $memberDiv = $memberDiv.parent();
+      }
+      $memberDiv.addClass('active');
     }
   }
 
@@ -64,7 +72,7 @@
     var headings = $(opts.selectors, container);
     var headingOffsets = [];
     var activeClassName = 'active';
-    var ANCHOR_PREFIX = "__anchor";
+    var ANCHOR_PREFIX = "";//"__anchor";
     var maxScrollTo;
     var visibleHeight;
     var headerHeight = 10; // so if the header is readable, its counted as shown
@@ -73,9 +81,10 @@
     var scrollTo = function(e) {
       e.preventDefault();
       var target = $(e.target);
-      if (target.prop('tagName').toLowerCase() !== "a") {
+      while (target && target.prop('tagName').toLowerCase() !== "a") {
         target = target.parent();
       }
+      
       var elScrollToId = target.attr('href').replace(/^#/, '') + ANCHOR_PREFIX;
       var $el = $(document.getElementById(elScrollToId));
 
@@ -154,7 +163,10 @@
       headings.each(function(i, heading) {
         var $h = $(heading);
 
-        var anchor = $('<span/>').attr('id', opts.anchorName(i, heading, opts.prefix) + ANCHOR_PREFIX).insertBefore($h);
+        var anchor = $('<span/>').attr(
+          'id',
+          opts.anchorName(i, heading, opts.prefix) + ANCHOR_PREFIX
+        ).addClass('pseudo-anchor').insertBefore($h);
 
         var span = $('<span/>')
           .html(

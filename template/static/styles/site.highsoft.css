@@ -15,7 +15,7 @@ a {
 
 h3.subsection-title {
 	margin-top: 72px;
-	margin-bottom: -30px;
+	margin-bottom: 30px;
 }
 
 h4 {
@@ -47,9 +47,17 @@ h4 span.type-signature {
 	opacity: 0.6;
 	padding-left: 0.5em;
 }
-hr {
-	margin: 40px -100%; /* -100% to extend from side to side */
-	color: silver;
+div.hc-member {
+	margin: 0 -40px;
+	padding: 0 40px;
+	border-top: 1px solid silver;
+	transition: background-color 250ms;
+}
+div.hc-member:last-child {
+    border-bottom: 1px solid silver;
+}
+div.hc-member.active {
+	background-color: #eefdec;
 }
 
 h5 {
@@ -61,6 +69,16 @@ h5 {
 dt {
 	font-size: 13px;
 }
+div.hc-member dt h4.name {
+	padding-top: 40px;
+}
+div.hc-member dd {
+	padding-bottom: 40px;
+}
+.pseudo-anchor {
+	position: relative;
+	top: -3em; /* A little air above the active element */
+}
 
 p {
   	margin: 0 0 2em;
@@ -70,7 +88,7 @@ table.params {
 	border-bottom: 1px solid #ddd;
 }
 table.params thead tr {
-	background-color: #f9f9f9;
+	background-color: rgba(0, 0, 0, 0.025);
 }
 .table-striped > tbody > tr:nth-of-type(odd) {
 	background: none;
