@@ -61,6 +61,13 @@
 <div class="row">
 
 	<?js if(docs && docs[0].kind !== "source"){ ?>
+		<div class="col-md-4">
+			<div id="toc" class="col-md-4 hidden-xs hidden-sm"></div>
+		</div>
+	<?js } ?>
+
+
+	<?js if(docs && docs[0].kind !== "source"){ ?>
 	<div class="col-md-8">
 	<?js } else { ?>
 	<div class="col-md-12">
@@ -69,14 +76,6 @@
 			<?js= content ?>
 		</div>
 	</div>
-
-	<div class="clearfix"></div>
-
-	<?js if(docs && docs[0].kind !== "source"){ ?>
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
-	<?js } ?>
 
 </div>
 </div>
