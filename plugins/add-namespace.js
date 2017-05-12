@@ -18,7 +18,7 @@ exports.handlers = {
             '@member[Oo]f[\\s]+',
             '@type[\\s]+',
             '{'
-        ];
+        ].join('|');
         const classes = [
             'Chart',
             'Series',
@@ -28,9 +28,10 @@ exports.handlers = {
             'Tooltip',
             'SVGElement',
             'SVGRenderer'
-        ]
-        let regex = '(' + prefixes.join('|') + ')(' + classes.join('|') + ')';
+        ].join('|');
+
+        let regex = '(' + prefixes + ')(' + classes + ')([^a-zA-Z])';
         e.comment = e.comment
-            .replace(new RegExp(regex, 'g'), '$1Highcharts.$2');
+            .replace(new RegExp(regex, 'g'), '$1Highcharts.$2$3');
     }
 };
