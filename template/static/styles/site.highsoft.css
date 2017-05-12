@@ -71,6 +71,11 @@ h4 span.type-signature {
 #main {
 	border-left: 1px solid silver;
 }
+
+.main-column {
+	padding-left: 5px;
+	padding-right: 0;
+}
 div.hc-member {
 	padding: 0 40px;
 	border-top: 1px solid silver;
