@@ -16,6 +16,7 @@ exports.handlers = {
             '{@link[\\s\\*]+',
             '@lends[\\s\\*]+',
             '@member[Oo]f[\\s]+',
+            '@see[\\s]+',
             '@type[\\s]+',
             '{'
         ].join('|');
