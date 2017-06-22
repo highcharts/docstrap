@@ -14,16 +14,19 @@ exports.handlers = {
         
         const prefixes = [
             '{@link[\\s\\*]+',
+            '@constructor[\\s\\*]+',
             '@lends[\\s\\*]+',
             '@member[Oo]f[\\s]+',
             '@see[\\s]+',
             '@type[\\s]+',
-            '{'
+            '{',
+            'Array\.\<'
         ].join('|');
         const classes = [
             'Chart',
             'Series',
             'Point',
+            'Pointer',
             'Axis',
             'Legend',
             'Tooltip',
