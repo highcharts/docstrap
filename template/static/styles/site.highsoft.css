@@ -1,5 +1,6 @@
 @import 'site.simplex.css';
 
+
 body {
 	font-size: 16px;
 }
@@ -44,7 +45,7 @@ h4 span.type-signature {
 #toc {
 	position: fixed;
 	padding: 0;
-	top: 80px;
+	top: 130px;
 	left: 0;
 	max-height: calc(100% - 92px);
 }
@@ -70,6 +71,7 @@ h4 span.type-signature {
 
 #main {
 	border-left: 1px solid silver;
+	margin-top: 130px;
 }
 
 .main-column {
@@ -150,14 +152,23 @@ code {
 	font-family: "Courier New", Courier, monospace;
 	color: #6699A1;
 }
-
+.navbar-header {
+	float: none;
+	background: #47475C;
+	padding-bottom: 10px;
+}
 .navbar-default {
 	background-color: #3A3A4F;
 }
+.nav > li > a {
+	font-weight: normal;
+	font-size: 14px;
+	padding: 10px 20px;
+}
 
 img.branding-logo {
-	max-height: 44px;
-	margin-left: 10px;
+	max-height: 65px;
+	margin: -18px 5px 0 15px;
 }
 .navbar-nav > li > a {
 	line-height: 38px;
