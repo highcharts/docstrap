@@ -108,7 +108,7 @@
         <h3 class="subsection-title">Namespaces</h3>
 
         <dl class="subsection-list"><?js namespaces.forEach(function(n) { ?>
-            <dt><a href="namespaces.html#<?js= n.longname ?>"><?js= self.linkto(n.longname, n.name) ?></a></dt>
+            <dt><a href="namespaces#<?js= n.longname ?>"><?js= self.linkto(n.longname, n.name) ?></a></dt>
             <dd><?js if (n.summary) { ?><?js= n.summary ?><?js } ?></dd>
         <?js }); ?></dl>
     <?js } ?>

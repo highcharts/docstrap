@@ -18,7 +18,14 @@ var template = require('jsdoc/template'),
   moment = require("moment"),
   htmlsafe = helper.htmlsafe,
   sanitizeHtml = require('sanitize-html'),
-  linkto = helper.linkto,
+
+  // Highsoft's override to remove .html extensions
+  linkto = function () {
+    var s = helper.linkto.apply(this, arguments);
+
+    s = s.replace(/\.html(#|")/g, '$1');
+    return s;
+  },
   resolveAuthorLinks = helper.resolveAuthorLinks,
   scopeToPunc = helper.scopeToPunc,
   hasOwnProp = Object.prototype.hasOwnProperty,
@@ -27,6 +34,7 @@ var template = require('jsdoc/template'),
   view,
   outdir = env.opts.destination,
   searchEnabled = conf.search !== false;
+
 
 var globalUrl = helper.getUniqueFilename('global');
 var indexUrl = helper.getUniqueFilename('index');
