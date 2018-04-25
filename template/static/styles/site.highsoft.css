@@ -45,7 +45,7 @@ h4 span.type-signature {
 #toc {
 	position: fixed;
 	padding: 0;
-	top: 130px;
+	top: 110px;
 	left: 0;
 	max-height: calc(100% - 92px);
 }
@@ -231,4 +231,11 @@ img.branding-logo {
 }
 .jsdoc-message a {
 	color: silver;
+}
+
+@media (min-width: 992px) {
+	footer {
+		float: left;
+	    width: 66.66666667%;
+	}
 }
