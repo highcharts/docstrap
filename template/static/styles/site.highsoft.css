@@ -94,7 +94,7 @@ div.container-overview div.hc-member {
 }
 
 div.hc-member:last-child {
-    border-bottom: 1px solid silver;
+	border-bottom: 1px solid silver;
 }
 div.hc-member.active {
 	background-color: #eefdec;
@@ -128,7 +128,7 @@ div.hc-member dd {
 }
 
 p {
-  	margin: 0 0 2em;
+	margin: 0 0 2em;
 }
 table.params {
 	border-top: 2px solid #ddd;
@@ -174,10 +174,10 @@ img.branding-logo {
 	line-height: 38px;
 }
 .navbar-default .navbar-brand {
-    color: #eeeaea;
+	color: #eeeaea;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #eeeaea;
+	color: #eeeaea;
 }
 .navbar-form {
 	margin-top: 12px;
@@ -203,12 +203,12 @@ img.branding-logo {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  	color: #8085e8;
+	color: #8085e8;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  	color: #8085e8;
+	color: #8085e8;
 }
 
 .nav .open > a,
@@ -236,6 +236,6 @@ img.branding-logo {
 @media (min-width: 992px) {
 	footer {
 		float: right;
-	    width: 66.66666667%;
+		width: 66.66666667%;
 	}
 }
