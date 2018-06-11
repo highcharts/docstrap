@@ -20,6 +20,7 @@ exports.handlers = {
             '@see[\\s]+',
             '@type[\\s]+',
             '{',
+            'Array\<',
             'Array\.\<'
         ].join('|');
         const classes = [
