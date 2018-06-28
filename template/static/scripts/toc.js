@@ -172,7 +172,9 @@
           .html(
             opts
               .headerText(i, heading, $h)
-              .replace(/(\([^\)]*\))/g, '<span class="params">$1</span>')
+              .replace(/</gm, '&lt;')
+              .replace(/>/gm, '&gt;')
+              .replace(/(\([^\)]*\))/gm, '<span class="params">$1</span>')
           );
 
         //build TOC item
