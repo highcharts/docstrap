@@ -172,6 +172,7 @@
           .html(
             opts
               .headerText(i, heading, $h)
+              .replace(/<static>/gm, '')
               .replace(/</gm, '&lt;')
               .replace(/>/gm, '&gt;')
               .replace(/(\([^\)]*\))/gm, '<span class="params">$1</span>')
