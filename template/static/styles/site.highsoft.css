@@ -196,6 +196,9 @@ img.branding-logo {
 	border-color: #6699A1;
 	color: black;
 }
+.list-group-item.readonly, .list-group-item.static {
+	font-style: italic;
+}
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {

@@ -168,15 +168,21 @@
           opts.anchorName(i, heading, opts.prefix) + ANCHOR_PREFIX
         ).addClass('pseudo-anchor').insertBefore($h);
 
-        var span = $('<span/>')
-          .html(
-            opts
-              .headerText(i, heading, $h)
-              .replace(/(\([^\)]*\))/g, '<span class="params">$1</span>')
+        var spanText = opts.headerText(i, heading, $h),
+          isReadonly = (spanText.indexOf('<readonly>') > -1),
+          isStatic = (spanText.indexOf('<static>') > -1),
+          span = $('<span/>').html(
+            spanText
+              .replace(/<(?:readonly|static)>/gm, '')
+              .replace(/\.?</gm, '&lt;')
+              .replace(/>/gm, '&gt;')
+              .replace(/(\([^\)]*\))/gm, '<span class="params">$1</span>')
           );
 
         //build TOC item
-        var a = $('<a class="list-group-item"/>')
+        var a = $('<a class="list-group-item' +
+          (isReadonly ? ' readonly' : '') +
+          (isStatic ? ' static' : '') + '"/>')
           .append(span)
           .attr('href', '#' + opts.anchorName(i, heading, opts.prefix))
           .bind('click', function(e) {
